@@ -4,11 +4,12 @@ import "github.com/fpapadopou/scheduler/internal/storage"
 
 // Store satisfies the Store interface. Jobs are stored in map via pointers.
 type Store struct {
-	jobs map[string]*storage.Job
+	jobs map[int64]*storage.Job
 }
 
 // Get returns a Job object by its ID.
-func (s *Store) Get(ID int) (*storage.Job, error) {
+func (s *Store) Get(ID int64) (*storage.Job, error) {
+
 
 	return nil, nil
 }
@@ -20,7 +21,7 @@ func (s *Store) Put(job storage.Job) error {
 }
 
 // Delete removes a Job from the store.
-func (s *Store) Delete(ID int) error {
+func (s *Store) Delete(ID int64) error {
 
 	return nil
 }
